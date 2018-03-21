@@ -168,13 +168,13 @@ public class DataEntryStatistic<K> {
 	private static void DaysWithLessThan50ObservationsIncludingDaysWith0(final TableRow workingDaysRow,
 			final String user, final Long total, final Date workingDay) {
 
-		if ((total >= 50)) {
+		if ((total >= 50 )) {
 			return;
 		}
 		Integer daysNotworking = (Integer) workingDaysRow.get(user);
 
 		if (daysNotworking == null) {
-			workingDaysRow.put(user, 1);
+			workingDaysRow.put(user, 0);
 			return;
 		}
 
@@ -195,7 +195,7 @@ public class DataEntryStatistic<K> {
 		Integer daysNotworking = (Integer) workingDaysRow.get(user);
 
 		if (daysNotworking == null) {
-			workingDaysRow.put(user, 1);
+			workingDaysRow.put(user, 0);
 			return;
 		}
 
